@@ -4,13 +4,15 @@ import React from "react";
 import "./ToDoItem.css";
 
 function ToDoItem(props) {
-  const { todo, completeToDo, index } = props;
+  const { todo, completeToDo, index, removeToDo } = props;
 
   return (
     <div className={`todo ${todo.isComplete ? "complete" : ""}`}>
       {todo.text}
-      <button onClick={() => completeToDo(index)}>Complete</button>
-      <button onClick={() => remove ToDo(index)}>x</button>
+      <div>
+        <button onClick={() => completeToDo(index)}>Complete</button>
+        <button onClick={() => removeToDo(index)}>x</button>
+      </div>
     </div>
   );
 }
